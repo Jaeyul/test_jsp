@@ -11,7 +11,7 @@
 다시 만들기 어려웡
 <br>
 
-<a href="/user/list.do">유저리스트</a>
+<a href="/user/list">유저리스트</a>
 
 
 </body>
