@@ -9,20 +9,17 @@ import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 public class DBCon {	
-	private static Connection conn;
-	public static Connection getCon() {
-		if(DBCon.conn == null) {			
-			Context initContext;		
-			try {
-				initContext = new InitialContext();
-				Context envContext = (Context)initContext.lookup("java:/comp/env");
-				DataSource ds = (DataSource)envContext.lookup("jdbc/IOT");
-				DBCon.conn = ds.getConnection();
-			} catch (NamingException | SQLException e) {				
-				e.printStackTrace();
-			}			
-		}
-		return DBCon.conn;		
+	public static Connection getCon() {			
+		Context initContext;		
+		try {
+			initContext = new InitialContext();
+			Context envContext = (Context)initContext.lookup("java:/comp/env");
+			DataSource ds = (DataSource)envContext.lookup("jdbc/IOT");
+			return ds.getConnection();
+		} catch (NamingException | SQLException e) {				
+			e.printStackTrace();
+		}	
+		return null;		
 	}
 }
 

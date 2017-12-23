@@ -13,7 +13,34 @@
 <%
 ArrayList<HashMap<String, Object>> userList = null;
 userList = (ArrayList<HashMap<String, Object>>)request.getAttribute("list");
-out.println(userList);
 %>
+<table border="1">
+	<tr>
+		<th>번호</th>
+		<th>이름</th>
+		<th>나이</th>
+		<th>아이디</th>
+		<th>비밀번호</th>
+		<th>부서번호</th>
+		<th>가입일자</th>
+		<th>주소</th>
+	</tr>
+<%
+for(HashMap<String, Object> hm : userList){
+%>
+	<tr>
+		<td><%=hm.get("uino") %></td>
+		<td><%=hm.get("uiname") %></td>
+		<td><%=hm.get("uiage") %></td>
+		<td><%=hm.get("uiid") %></td>
+		<td><%=hm.get("uipwd") %></td>
+		<td><%=hm.get("cino") %></td>
+		<td><%=hm.get("uiregdate") %></td>
+		<td><%=hm.get("address") %></td>
+	</tr>
+<%
+}
+%>
+</table>
 </body>
 </html>

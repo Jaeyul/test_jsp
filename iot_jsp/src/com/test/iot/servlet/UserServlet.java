@@ -47,18 +47,22 @@ public class UserServlet extends HttpServlet {
 		String cmd = getCommand(uri);		
 		System.out.println("cmd : " + cmd);
 		System.out.println(uri);
-		if(cmd.equals("list")) {		
-//			HashMap<String, Object> hm = new HashMap<String, Object>();
-//			hm.put("test", 1);
-//			req.setAttribute("test", hm);
-						
-			
+		if(cmd.equals("list")) {					
 			req.setAttribute("list", us.getUserList());
-			
-			
 		}else if(cmd.equals("view")) {			
 			us.getUser();
-		}else {			
+		}else if(cmd.equals("insert")) {
+		} if(cmd.equals("insertok")){
+			HashMap<String,String> hm = new HashMap<String,String>();
+			hm.put("uiname", req.getParameter("uiname"));
+			hm.put("uiage", req.getParameter("uiage"));
+			hm.put("uiid", req.getParameter("uiid"));
+			hm.put("uipwd", req.getParameter("uipwd"));
+			hm.put("address", req.getParameter("address"));
+			us.insertUser(hm);
+			req.setAttribute("list", us.getUserList());
+			uri="/user/list";
+		}else {
 			cmd = "/common/error";
 		}
 //		cmd += ".jsp";			

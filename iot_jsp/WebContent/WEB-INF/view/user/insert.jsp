@@ -8,6 +8,32 @@
 <title>유저입력</title>
 </head>
 <body>
-
+<form action="/user/insertok">
+<table border="1">
+	<tr>
+		<td>이름</td>
+		<td><input type="text" name="uiname" id="uiname"></td>
+	</tr>		
+	<tr>
+		<td>나이</td>
+		<td><input type="text" name="uiage" id="uiage"></td>
+	</tr>
+	<tr>
+		<td>아이디</td>
+		<td><input type="text" name="uiid" id="uiid"></td>
+	</tr>
+	<tr>
+		<td>비밀번호</td>
+		<td><input type="text" name="uipwd" id="uipwd"></td>
+	</tr>
+	<tr>
+		<td>주소</td>
+		<td><input type="text" name="address" id="address"></td>
+	</tr>
+	<tr>
+		<td colspan="2"><input type="submit" value="회원가입"></td>
+	</tr>
+</table>
+</form>	
 </body>
 </html>
