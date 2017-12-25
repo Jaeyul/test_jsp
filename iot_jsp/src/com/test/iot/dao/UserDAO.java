@@ -9,4 +9,6 @@ public interface UserDAO {
 	ArrayList<HashMap<String, Object>> selectUserList(Connection con);
 	HashMap<String, Object> selectUser(Connection con);
 	int insertUser(Connection con, HashMap<String, String> user);
+	int deleteUser(Connection con, HashMap<String, String> user);
+	int updateUser(Connection con, HashMap<String, String> user);
 }

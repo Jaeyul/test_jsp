@@ -51,8 +51,11 @@ public class UserServlet extends HttpServlet {
 			req.setAttribute("list", us.getUserList());
 		}else if(cmd.equals("view")) {			
 			us.getUser();
-		}else if(cmd.equals("insert")) {
-		} if(cmd.equals("insertok")){
+		}
+//		else if(cmd.equals("insert")) {
+//			
+//		}	
+		else if(cmd.equals("insertok")){
 			HashMap<String,String> hm = new HashMap<String,String>();
 			hm.put("uiname", req.getParameter("uiname"));
 			hm.put("uiage", req.getParameter("uiage"));
@@ -62,7 +65,24 @@ public class UserServlet extends HttpServlet {
 			us.insertUser(hm);
 			req.setAttribute("list", us.getUserList());
 			uri="/user/list";
-		}else {
+		}
+		else if(cmd.equals("deleteok")){
+			HashMap<String,String> hm = new HashMap<String,String>();			
+			hm.put("uino", req.getParameter("uino"));
+			us.deleteUser(hm);
+			req.setAttribute("list", us.getUserList());
+			uri="/user/list";
+		}
+		else if(cmd.equals("updateok")){
+			HashMap<String,String> hm = new HashMap<String,String>();			
+			hm.put("uiage", req.getParameter("uiage"));
+			hm.put("uino", req.getParameter("uino"));
+			us.updateUser(hm);
+			req.setAttribute("list", us.getUserList());
+			uri="/user/list";
+		}
+		
+		else {
 			cmd = "/common/error";
 		}
 //		cmd += ".jsp";			

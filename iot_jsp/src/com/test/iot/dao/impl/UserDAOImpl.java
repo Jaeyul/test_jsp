@@ -40,7 +40,7 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public int insertUser(Connection con,HashMap<String, String> user) {
-		String sql = "insert user_info(uiid, uiname, uiage, uipwd, cino, uiregdate, address)";
+		String sql = "insert into user_info(uiid, uiname, uiage, uipwd, cino, uiregdate, address)";
 		sql += " values(?,?,?,?,1,now(),?)";
 		PreparedStatement ps = null;
 		int result = 0;
@@ -57,6 +57,40 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return result;
 	}
+	
+	public int deleteUser(Connection con,HashMap<String, String> user) {
+		String sql = "delete from user_info";
+		sql += " where uino = ?";
+		PreparedStatement ps = null;
+		int result = 0;
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, user.get("uino"));		
+			result = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	public int updateUser(Connection con,HashMap<String, String> user) {
+		String sql = "update user_info";
+		sql += " set uiage = ? where uino = ?";			
+		
+		PreparedStatement ps = null;
+		int result = 0;
+		try {
+			ps = con.prepareStatement(sql);			
+			ps.setString(1, user.get("uiage"));
+			ps.setString(2, user.get("uino"));	
+			result = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return result;
+	}
+	
+	
 
 
 	@Override

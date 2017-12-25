@@ -41,6 +41,38 @@ public class UserServiceImpl implements UserService{
 		con = null;
 		return result;
 	}
+	
+	public int deleteUser(HashMap<String, String> user) {
+
+		Connection con = DBCon.getCon();
+		int result = 0;
+		result =  ud.deleteUser(con, user);
+		try {
+			con.commit();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		con = null;
+		return result;
+	}
+	
+	public int updateUser(HashMap<String, String> user) {
+
+		Connection con = DBCon.getCon();
+		int result = 0;
+		result =  ud.updateUser(con, user);
+		try {
+			con.commit();
+			con.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		con = null;
+		return result;
+	}
+
+	
 
 	@Override
 	public HashMap<String, Object> getUser() {

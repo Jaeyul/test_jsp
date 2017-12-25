@@ -42,5 +42,10 @@ for(HashMap<String, Object> hm : userList){
 }
 %>
 </table>
+
+<a href="/user/insert">유저삽입</a>
+<a href="/user/delete">유저삭제</a>
+<a href="/user/update">유저수정</a>
+
 </body>
 </html>
