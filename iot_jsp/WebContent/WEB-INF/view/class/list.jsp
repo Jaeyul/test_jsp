@@ -33,7 +33,7 @@ for(HashMap<String, Object> hm : classList){
 %>
 </table>
 
-<a href="/class/insert">클래스삽입</a>
+<a href="/class/insert">클래스생성</a>
 <a href="/class/delete">클래스삭제</a>
 <a href="/class/update">클래스수정</a>
 <br>
