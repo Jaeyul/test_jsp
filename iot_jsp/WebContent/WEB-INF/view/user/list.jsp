@@ -46,6 +46,7 @@ for(HashMap<String, Object> hm : userList){
 <a href="/user/insert">유저삽입</a>
 <a href="/user/delete">유저삭제</a>
 <a href="/user/update">유저수정</a>
-
+<br>
+<a href="/">처음으로</a>
 </body>
 </html>

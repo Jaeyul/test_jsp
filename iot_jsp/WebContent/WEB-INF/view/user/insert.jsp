@@ -26,9 +26,14 @@
 		<td>비밀번호</td>
 		<td><input type="text" name="uipwd" id="uipwd"></td>
 	</tr>
+	
 	<tr>
 		<td>주소</td>
 		<td><input type="text" name="address" id="address"></td>
+	</tr>
+	<tr>
+		<td>부서</td>
+		<td><input type="text" name="cino" id="cino"></td>
 	</tr>
 	<tr>
 		<td colspan="2"><input type="submit" value="회원가입"></td>

@@ -5,9 +5,12 @@ import java.util.HashMap;
 
 public interface UserService {
 	
-	ArrayList<HashMap<String, Object>> getUserList();
+	ArrayList<HashMap<String, Object>> getUserList(String tableName);
 	HashMap<String, Object> getUser();
-	int insertUser(HashMap<String, String> user);
-	int deleteUser(HashMap<String, String> user);
-	int updateUser(HashMap<String, String> user);
+	String[] getColumns(String tableName);
+	String getPrimaryKeyName(String tableName);
+	int insertUser(HashMap<String, String> user, String tableName);
+	int deleteUser(HashMap<String, String> user, String tableName);
+	int updateUser(HashMap<String, String> user, String tableName);
+	
 }
