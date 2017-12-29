@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+
+
+	var rNum = Math.floor(Math.random() * 8 ) + 1;
+	
+	function checkNum(id){			
+		if(document.getElementById(id).id == rNum){
+			alert("폭탄 쿸왘아카ㅗ앜");
+			alert("번호는" + rNum + " 임!!");				
+		}else{			
+			alert("너 틀림");
+		}				
+	}	
+
+
+</script>
+<body>
+<input type="button" id= "1" value= a onclick="checkNum(id)">
+<input type="button" id= "2" value="a" onclick="checkNum(id)">
+<input type="button" id= "3" value="a" onclick="checkNum(id)">
+<input type="button" id= "4" value="a" onclick="checkNum(id)">
+<input type="button" id= "5" value="a" onclick="checkNum(id)">
+<input type="button" id= "6" value="a" onclick="checkNum(id)">
+<input type="button" id= "7" value="a" onclick="checkNum(id)">
+<input type="button" id= "8" value="a" onclick="checkNum(id)">
+
+
+
+
+</body>
+</html>

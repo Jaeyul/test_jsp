@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>타이틀</title>
+</head>
+
+<body>
+<a id="a1" href="http://naver.com">네이버</a><br>
+<a id="a2" href="http://daum.net">다음</a><br>
+<a id="a3" href="http://google.com">구글</a><br>
+<a id="a4" href="http://nate.com">네이트</a>
+<div id="test"><a>테스트 div입니다.</a></div>
+넌 테스트 div 밖에 있다.
+<input type="button" value="체인지" onclick="chanege()">
+</body>
+<script>
+var divObj = document.getElementById("test");
+alert(divObj.innerHTML);
+alert(divObj.firstChild.innerHTML);
+divObj.ppr= "허허";
+alert(divObj.ppr);
+
+alert(document.getElementById("a1").href)
+</script>
+</html>

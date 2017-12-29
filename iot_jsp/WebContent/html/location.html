@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script>
+
+function movePage(url){
+	alert(url);
+	//location.href="./target.html";	
+}
+
+function setStyle(obj, init){
+	if(init){
+		obj.style.cssText = "";
+		
+	}else{
+		obj.style.cssText = "cursor:pointer";
+		obj.style.cssText += "color:blue";
+		obj.style.cssText += "text-decoration : underline";			
+	}
+}
+
+function setEvent(){
+	var objs =document.getElementsByTagName("div");
+	for(var obj of objs){
+		if(obj.getAttribute("data-url")){			
+			obj.onclick = movePage.bind(null, obj.getAttribute("data-url"));
+			obj.onmouseover = setStyle.bind(null, obj, false);
+			obj.onmouseout = setStyle.bind(null, obj, true);
+		}			
+	}	
+}
+
+
+
+</script>
+<body onload="setEvent()">
+<dir>ㅋㅋ</dir>
+<div data-url="http://localhost/html/target.html">URL을 이용한 이동</div><br>
+<div data-url="/html/target.html">절대경로를 이용한 이동</div><br>
+<div data-url="./target.html">상대경로를 이용한 이동1</div><br>
+<div data-url="target.html">상대경로를 이용한 이동2</div><br>
+<div data-url="../target.html">상대경로를 이용한 상위폴더 이동</div><br>
+<div data-url="/target.html">절대경로를 이용한 상위폴더 이동</div>
+</body>
+</html>

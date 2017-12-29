@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<body>
+<input type="button" value="Click Me" onclick="clickCount()">
+<input type="button" value="Come here window of child" onclick="openchildWindow()">
+
+</body>
+<script>
+function openchildWindow(){
+	window.open("/test.html");
+}
+
+
+var cnt = 1;
+var clickCount = function(){
+	alert(cnt++);	
+}
+</script>
+</html>
